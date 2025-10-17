@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.metis.controllers.CalendarController"
+            stylesheets="@../css/application.css"
+            prefWidth="900" prefHeight="600">
+
+    <!-- ===== Top Bar ===== -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #1E293B; -fx-padding: 10;">
+            <Label text="📅 Calendar" style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+            <Button text="Today" onAction="#goToToday"/>
+            <Button text="Prev" onAction="#goToPreviousMonth"/>
+            <Button text="Next" onAction="#goToNextMonth"/>
+        </HBox>
+    </top>
+
+    <!-- ===== Center Calendar Area ===== -->
+    <center>
+        <StackPane fx:id="calendarContainer" style="-fx-padding: 20;">
+            <VBox alignment="CENTER" spacing="10">
+                <Label fx:id="monthLabel" text="Month Placeholder" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                <GridPane fx:id="calendarGrid" hgap="10" vgap="10" style="-fx-background-color: #CBD5E1; -fx-padding: 10;"/>
+            </VBox>
+    
+            <!-- ===== Event Popup ===== -->
+            <AnchorPane fx:id="eventPopup" visible="false" style="-fx-background-color: rgba(0,0,0,0.5);">
+                <VBox alignment="CENTER" spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 10; -fx-background-radius: 10; -fx-pref-width: 300;">
+                    <Label text="Add Event" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <TextField fx:id="titleField" promptText="Event Title"/>
+                    <ComboBox fx:id="timePicker" promptText="Select time"/>
+                    <TextArea fx:id="descField" promptText="Description" prefRowCount="3"/>
+                    <HBox spacing="10" alignment="CENTER">
+                        <Button text="Save" onAction="#saveEvent" style="-fx-background-color: #4F46E5; -fx-text-fill: white;"/>
+                        <Button text="Cancel" onAction="#cancelEvent" style="-fx-background-color: #CBD5E1; -fx-text-fill: black;"/>
+                        <Button fx:id="deleteButton" text="Delete" onAction="#deleteEvent"
+                                style="-fx-background-color: #EF4444; -fx-text-fill: white;" visible="false"/>
+                    </HBox>
+                    
+                </VBox>
+            </AnchorPane>
+        </StackPane>
+    </center>
+    
+</BorderPane>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.metis.controllers.TodoController"
+      spacing="12" styleClass="page">
+    <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+
+    <!-- Header -->
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Label text="To-Do" styleClass="page-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="searchField" promptText="Search tasks…" prefWidth="260"/>
+        <ChoiceBox fx:id="statusFilter"/>
+    </HBox>
+
+    <!-- Toolbar -->
+    <HBox spacing="8">
+        <TextField fx:id="taskInput" promptText="Add a task…" HBox.hgrow="ALWAYS"/>
+        <DatePicker fx:id="dueDatePicker" promptText="Due date"/>
+        <ComboBox fx:id="priorityBox" promptText="Priority" prefWidth="120"/>
+        <Button fx:id="addBtn" text="Add" styleClass="primary-btn"/>
+    </HBox>
+
+    <!-- List -->
+    <ListView fx:id="taskList" VBox.vgrow="ALWAYS"/>
+
+    <!-- Actions -->
+    <HBox spacing="8" alignment="CENTER_RIGHT">
+        <Button fx:id="toggleBtn" text="Toggle Complete"/>
+        <Button fx:id="deleteBtn" text="Delete" styleClass="danger-btn"/>
+    </HBox>
+</VBox>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Separator?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.metis.controllers.SettingsController"
+      spacing="15"
+      alignment="TOP_LEFT"
+      style="-fx-background-color: #0f1422; -fx-padding: 25;">
+
+    <Label text="⚙ Settings"
+           style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <Separator/>
+
+    <HBox spacing="10">
+        <Label text="Theme:" style="-fx-text-fill: white;"/>
+        <ChoiceBox fx:id="themeChoiceBox"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Font Size:" style="-fx-text-fill: white;"/>
+        <ChoiceBox fx:id="fontChoiceBox"/>
+    </HBox>
+
+    <CheckBox fx:id="notificationsCheckBox"
+              text="Enable Notifications"
+              style="-fx-text-fill: white;"/>
+
+    <Separator/>
+
+    <HBox spacing="10">
+        <Button fx:id="backupButton" text="Backup Data"
+                onAction="#onBackup"
+                style="-fx-background-color: #3D6BF5; -fx-text-fill: white;"/>
+        <Button fx:id="restoreButton" text="Restore Data"
+                onAction="#onRestore"
+                style="-fx-background-color: #3D6BF5; -fx-text-fill: white;"/>
+        <Button fx:id="resetButton" text="Reset Defaults"
+                onAction="#onReset"
+                style="-fx-background-color: #555; -fx-text-fill: white;"/>
+    </HBox>
+
+</VBox>
