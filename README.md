@@ -18,7 +18,7 @@ Metis is a desktop utility for students, built entirely in Java with the JavaFX 
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/gayathrisathish/metis-desktop.git](https://github.com/gayathrisathish/metis-desktop.git)
+    git clone [[https://github.com/jul2264/Metis_Student_Planner.git](https://github.com/jul2264/Metis_Student_Planner.git)](https://github.com/jul2264/Metis_Student_Planner.git)
     cd metis-desktop-main
     ```
 
